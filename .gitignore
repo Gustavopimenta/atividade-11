@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+__pycache__/*
+*.pyc
+*.pyo
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Output directories
+__pycache__/
+build/
+dist/
+
+# Environment related files
+.env
+*.env
+
+# OS or Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Virtual environment
+venv/
+venv2/
+env/
