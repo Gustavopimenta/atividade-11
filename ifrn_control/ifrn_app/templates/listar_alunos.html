@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Lista de Alunos</h1>
+  <table class="table" style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr style="border: 1px solid #000;">
+        <th style="border: 1px solid #000;">Nome</th>
+        <th style="border: 1px solid #000;">Idade</th>
+        <th style="border: 1px solid #000;">Email</th>
+        <th style="border: 1px solid #000;">Cidade</th>
+        <th style="border: 1px solid #000;">Curso</th>
+        <th style="border: 1px solid #000;">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for aluno in alunos %}
+        <tr style="border: 1px solid #000;">
+          <td style="border: 1px solid #000;">{{ aluno.nome }}</td>
+          <td style="border: 1px solid #000;">{{ aluno.idade }}</td>
+          <td style="border: 1px solid #000;">{{ aluno.email }}</td>
+          <td style="border: 1px solid #000;">{{ aluno.cidade }}</td>
+          <td style="border: 1px solid #000;">{{ aluno.curso }}</td>
+          <td style="border: 1px solid #000;">
+            <a href="{% url 'visualizar_aluno' aluno.id %}">Visualizar</a>
+            <a href="{% url 'editar_aluno' aluno.id %}">Editar</a>
+            <a href="{% url 'excluir_aluno' aluno.id %}">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'cadastrar_aluno' %}">Cadastrar Aluno</a>
+{% endblock %}
